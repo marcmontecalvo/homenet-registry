@@ -1,0 +1,39 @@
+{
+  "schema": "homenet-addon/1",
+  "id": "calendar",
+  "name": "Calendar",
+  "version": "0.3.1",
+  "description": "The family's calendars in one place. Each person chooses what the household sees: nothing, busy times only, or the details.",
+  "author": "Marc Montecalvo",
+  "repo": "https://github.com/marcmontecalvo/hcp_calendar",
+  "minHomenetVersion": "0.1.0",
+  "ui": { "navEntry": true, "navLabel": "Calendar", "navIcon": "calendar", "route": "/activity/calendar" },
+  "provides": [{ "point": "calendar.provider", "description": "Calendar sources, such as Google and Microsoft 365" }],
+  "extends": [{ "point": "agent.tool", "description": "Calendar tools for agents that were given this add-on" }],
+  "permissions": [
+    "hn1:calendar:calendars:read",
+    "hn1:calendar:calendars:write",
+    "hn1:calendar:events:read",
+    "hn1:calendar:events:read_sensitive",
+    "hn1:calendar:events:write",
+    "hn1:calendar:household_availability:read",
+    "hn1:calendar:household_events:read",
+    "hn1:calendar:hcp:admin",
+    "hn1:calendar:hcp:read_sensitive"
+  ],
+  "config": [
+    {
+      "id": "connector",
+      "kind": "hcp",
+      "label": "Calendar connector address",
+      "help": "The HTTPS address where the Calendar service runs, for example https://calendar.example.org."
+    },
+    {
+      "id": "accounts",
+      "kind": "provider",
+      "label": "Link calendar accounts",
+      "help": "Each person links their own Google or Microsoft 365 account and chooses what the household may see.",
+      "required": false
+    }
+  ]
+}

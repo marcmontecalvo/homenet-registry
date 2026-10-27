@@ -1,0 +1,40 @@
+{
+  "schema": "homenet-addon/1",
+  "id": "foodflow",
+  "name": "FoodFlow",
+  "version": "0.4.0",
+  "description": "Receipts, pantry and supplies: what the house has, what is running out, and a saved shopping list.",
+  "author": "Marc Montecalvo",
+  "repo": "https://github.com/marcmontecalvo/FoodFlow",
+  "minHomenetVersion": "0.1.0",
+  "ui": { "navEntry": true, "navLabel": "FoodFlow", "navIcon": "cart", "route": "/activity/foodflow" },
+  "provides": [],
+  "extends": [{ "point": "agent.tool", "description": "FoodFlow tools for agents that were given this add-on" }],
+  "permissions": [
+    "hn1:foodflow:inventory:read",
+    "hn1:foodflow:inventory:read_sensitive",
+    "hn1:foodflow:inventory:write",
+    "hn1:foodflow:shopping:read",
+    "hn1:foodflow:shopping:write",
+    "hn1:foodflow:receipts:ingest",
+    "hn1:foodflow:receipts:read",
+    "hn1:foodflow:receipts:read_sensitive",
+    "hn1:foodflow:receipts:write",
+    "hn1:foodflow:catalog:read",
+    "hn1:foodflow:catalog:admin",
+    "hn1:foodflow:aliases:read",
+    "hn1:foodflow:aliases:write",
+    "hn1:foodflow:preferences:read_sensitive",
+    "hn1:foodflow:preferences:write",
+    "hn1:foodflow:hcp:admin",
+    "hn1:foodflow:hcp:read_sensitive"
+  ],
+  "config": [
+    {
+      "id": "connector",
+      "kind": "hcp",
+      "label": "FoodFlow connector address",
+      "help": "The HTTPS address where FoodFlow's HomeNet connector listens."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "homenet-registry/1",
+  "name": "HomeNet default registry",
+  "addons": [
+    { "id": "calendar", "manifest": "addons/calendar.json" },
+    { "id": "foodflow", "manifest": "addons/foodflow.json" }
+  ]
+}
